@@ -1,7 +1,8 @@
 from decimal import DivisionByZero
+from ftplib import parse150
 import math
 
-class rJointClass:
+class rJointClass():
     
     def __init__(self):
         self.x1 = None
@@ -38,3 +39,36 @@ class rJointClass:
             return mid_angle
         except ZeroDivisionError:
             return 0
+
+class rHandClass():
+
+    def __init__(self):
+        self.landmarks_list = None
+        self.return_dict = {
+            "J2": None,
+            "J5": None,
+            "J9": None,
+            "J13": None,
+            "J17": None
+        }
+
+    def get_landmarks_list(self, landmarks_list):
+        self.landmarks_list = landmarks_list
+
+    def wrap_joint_class(self, index1, index2, index3):
+        rJoint_obj = rJointClass()
+        rJoint_obj.add_coords1(self.landmarks_list[index1][0], self.landmarks_list[index1][1])
+        rJoint_obj.add_coords2(self.landmarks_list[index2][0], self.landmarks_list[index2][1])
+        rJoint_obj.add_coords3(self.landmarks_list[index3][0], self.landmarks_list[index3][1])
+        mid_angle = rJoint_obj.compute_mid_angle()
+        return mid_angle
+
+    def return_joint_dict(self):
+
+        self.return_dict["J2"] = self.wrap_joint_class(1,2,3)
+        self.return_dict["J5"] = self.wrap_joint_class(0,5,6)
+        self.return_dict["J9"] = self.wrap_joint_class(0,9,10)
+        self.return_dict["J13"] = self.wrap_joint_class(0,13,14)
+        self.return_dict["J17"] = self.wrap_joint_class(0,17,18)
+
+        return self.return_dict

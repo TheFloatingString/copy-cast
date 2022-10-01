@@ -47,17 +47,25 @@ while True:
 
                 landmarks.append([lmx, lmy])
 
-            print(len(landmarks))
-            print(landmarks[20])
+            # print(len(landmarks))
+            # print(landmarks[20])
 
-            rJoint1 = rJoint.rJointClass()
-            rJoint1.add_coords1(landmarks[0][0], landmarks[0][1])
-            rJoint1.add_coords2(landmarks[5][0], landmarks[5][1])
-            rJoint1.add_coords3(landmarks[6][0], landmarks[6][1])
-            mid_angle = str(round(rJoint1.compute_mid_angle()))
+            # rJoint1 = rJoint.rJointClass()
+            # rJoint1.add_coords1(landmarks[0][0], landmarks[0][1])
+            # rJoint1.add_coords2(landmarks[5][0], landmarks[5][1])
+            # rJoint1.add_coords3(landmarks[6][0], landmarks[6][1])
+            # mid_angle = str(round(rJoint1.compute_mid_angle()))
+
+            rHand_obj = rJoint.rHandClass()
+            rHand_obj.get_landmarks_list(landmarks)
+            mid_angles_dict = rHand_obj.return_joint_dict()
 
             mediapipe_draw_obj.draw_landmarks(frame, handslms, mediapipe_hands_obj.HAND_CONNECTIONS)
-            cv2.putText(frame, mid_angle, (10,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+            cv2.putText(frame, str(round(mid_angles_dict["J2"])), (10,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+            cv2.putText(frame, str(round(mid_angles_dict["J5"])), (80,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+            cv2.putText(frame, str(round(mid_angles_dict["J9"])), (150,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+            cv2.putText(frame, str(round(mid_angles_dict["J13"])), (220,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+            cv2.putText(frame, str(round(mid_angles_dict["J17"])), (290,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
 
     cv2.imshow("repli.cate - Gesture Tracking", frame)
     if cv2.waitKey(1) == ord("q"):
