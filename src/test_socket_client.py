@@ -2,7 +2,8 @@ from http import client
 import socket
 
 def test_client():
-    host = socket.gethostname()
+    # host = socket.gethostname()
+    host = "172.16.143.147"
     port = 5000
 
     client_socket = socket.socket()
