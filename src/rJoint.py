@@ -36,6 +36,12 @@ class rJointClass():
 
             mid_angle = 180 + (vector_2_theta - vector_1_theta)
 
+            if mid_angle > 180:
+                mid_angle = 180
+
+            if mid_angle < 0:
+                mid_angle = 0
+
             return mid_angle
         except ZeroDivisionError:
             return 0

@@ -4,6 +4,9 @@ import mediapipe as mp
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 
+import requests
+import json
+
 from src import rJoint
 
 import time
@@ -66,6 +69,10 @@ while True:
             cv2.putText(frame, str(round(mid_angles_dict["J9"])), (150,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
             cv2.putText(frame, str(round(mid_angles_dict["J13"])), (220,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
             cv2.putText(frame, str(round(mid_angles_dict["J17"])), (290,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+
+        print(mid_angles_dict)
+
+        resp = requests.post("https://octopus-app-j626i.ondigitalocean.app/receive_controller", data=json.dumps(mid_angles_dict), headers={"Content-Type": "application/json"})
 
     cv2.imshow("repli.cate - Gesture Tracking", frame)
     if cv2.waitKey(1) == ord("q"):
