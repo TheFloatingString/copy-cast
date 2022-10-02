@@ -26,6 +26,14 @@ class rJointClass():
         self.x3 = x3
         self.y3 = y3
 
+    def true_to_desired(self, true_angle):
+        if true_angle<90 or true_angle>270:
+            return 40.0
+        elif true_angle>180:
+            return 0
+        else:
+            return -4/9*true_angle+80
+
     def compute_mid_angle(self):
         try:
             vector_1 = {"x":self.x2-self.x1, "y":self.y2-self.y1}
@@ -36,13 +44,16 @@ class rJointClass():
 
             mid_angle = 180 + (vector_2_theta - vector_1_theta)
 
-            if mid_angle > 180:
-                mid_angle = 180
+            # if mid_angle > 40:
+            #     mid_angle = 40
 
-            if mid_angle < 0:
-                mid_angle = 0
+            # if mid_angle < 0:
+            #     mid_angle = 0
 
+            mid_angle = self.true_to_desired(mid_angle)
+            # return 90
             return mid_angle
+
         except ZeroDivisionError:
             return 0
 
@@ -71,10 +82,10 @@ class rHandClass():
 
     def return_joint_dict(self):
 
-        self.return_dict["J2"] = self.wrap_joint_class(1,2,3)
-        self.return_dict["J5"] = self.wrap_joint_class(0,5,6)
-        self.return_dict["J9"] = self.wrap_joint_class(0,9,10)
-        self.return_dict["J13"] = self.wrap_joint_class(0,13,14)
-        self.return_dict["J17"] = self.wrap_joint_class(0,17,18)
+        self.return_dict["J2"] = self.wrap_joint_class(2,3,4)
+        self.return_dict["J5"] = 40-self.wrap_joint_class(5,6,7)
+        self.return_dict["J9"] = self.wrap_joint_class(9,10,11)
+        self.return_dict["J13"] = self.wrap_joint_class(13,14,15)
+        self.return_dict["J17"] = self.wrap_joint_class(17,18,19)
 
         return self.return_dict
