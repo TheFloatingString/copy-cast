@@ -1,6 +1,6 @@
 # copy-cat
 ### The Gist of it
-![[Cat learning from TV.png]]
+![[cat.png]]
 Exo skeletal gesture correction and visually guided training program based in OpenCV, and implemented using 3D printed retaining ring-and-link based mechanism and servo motors. 
 Also developed using the Qt Gui framework and a Flask webapp
 
