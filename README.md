@@ -1,4 +1,4 @@
-# copy-cat
+# copy-cast
 ### The Gist of it
 ![https://github.com/TheFloatingString/repli.cate/blob/master/cat.png](https://github.com/TheFloatingString/repli.cate/blob/master/cat.png)
 Exo skeletal gesture correction and visually guided training program based in OpenCV, and implemented using 3D printed retaining ring-and-link based mechanism and servo motors. 
