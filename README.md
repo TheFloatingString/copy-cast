@@ -1,8 +1,6 @@
 # copy-cast
 
 #### Service Architecture Diagram
-![Uploading image.png…]()
-
 ![https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png](https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png)
 https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png
 #### Pitch Deck
