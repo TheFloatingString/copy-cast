@@ -15,3 +15,7 @@ The best of implementation of a tool like this is in the healthcare industry, wi
 
 
 # [HackMIT Submission](https://spectacle.hackmit.org/project/80)
+
+
+# 2nd Prize in the Pittsburgh Health Safety Challenge
+![IMG_2895](https://user-images.githubusercontent.com/39400946/195171715-9aeb3781-cacc-455b-8304-cef0ff693307.jpeg)
