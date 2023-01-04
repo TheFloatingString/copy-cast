@@ -1,6 +1,6 @@
 # copy-cast
 
-###Service Architecture Diagram
+### Service Architecture Diagram
 ![https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png](https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png)
 
 https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png
@@ -15,14 +15,15 @@ The best of implementation of a tool like this is in the healthcare industry, wi
 
 ## Quickstart
 
-Gesture detection web app:
+* Gesture detection web app:
 
 ```
 pip install -r requirements.txt
 python app.py
 ```
 
-The C++ code for the ESP-32 microcontroller is located in the `esp32` folder.
+* The C++ code for the ESP-32 microcontroller is located in the `esp32` folder.
+* A reflector server also needs to be set up (codebase available via this [GitHub repo](https://github.com/TheFloatingString/reflector-server))
 
 # [HackMIT Submission](https://spectacle.hackmit.org/project/80)
 
