@@ -1,6 +1,6 @@
 # copy-cast
 
-#### Service Architecture Diagram
+### Service Architecture Diagram
 ![https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png](https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png)
 
 https://github.com/TheFloatingString/repli.cate/blob/master/servarch.png
@@ -13,6 +13,16 @@ Also developed using the Qt Gui framework and a Flask webapp
 
 The best of implementation of a tool like this is in the healthcare industry, with usecases being specialized invasive surgery training, as well as post treatment physiotherapy training of Parkinson's and Huntington's patients. Since we can't bring a live surgeon for in-person presentation, we had to find a use case for something like this. Along our research we found that, along with physical activities, one of the core principals of physiotherapy regimes like the ones we're talking about is engaging the mind while engaging the physical, including games into activities, or getting the patients to play musical instruments due to the special brain workout they provide. The use case we found viable for this presentation is a Piano.
 
+### Runtime
+
+Gesture detection web app:
+
+```
+pip install -r requirements.txt
+python app.py
+```
+
+The C++ code for the ESP-32 microcontroller is located in the `esp32` folder.
 
 # [HackMIT Submission](https://spectacle.hackmit.org/project/80)
 
